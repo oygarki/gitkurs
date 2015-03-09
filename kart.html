@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Leaflet mobile example</title>
+	<title>Kjellis Ninjakart</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -24,7 +24,8 @@
 
 	<script>
 		var map = L.map('map');
-
+		
+var osmlayer =
 		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
 			maxZoom: 18,
 			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
@@ -32,6 +33,16 @@
 				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 			id: 'examples.map-i875mjb7'
 		}).addTo(map);
+		
+		var baseMaps = {
+    "openstreetmaps": osmlayer
+};
+
+var overlayMaps = {
+   
+};
+
+L.control.layers(baseMaps, overlayMaps).addTo(map);
 
 		function onLocationFound(e) {
 			var radius = e.accuracy / 2;
