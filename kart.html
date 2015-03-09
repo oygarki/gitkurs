@@ -34,8 +34,18 @@ var osmlayer =
 			id: 'examples.map-i875mjb7'
 		}).addTo(map);
 		
+		
+	var notopolayer = new
+	 L.TileLayer.WMS("http://opencache.statkart.no/gatekeeper/gk/gk.open", {
+        layers: 'topo2',
+        format: 'image/png',
+        attribution: '<a href="http://kartverket.no/">Kartverket</a>',
+        transparent: false
+    }).addTo(map);
+		
 		var baseMaps = {
-    "openstreetmaps": osmlayer
+    "openstreetmaps": osmlayer,
+    "Topografisk norgeskart" : notopolayer
 };
 
 var overlayMaps = {
