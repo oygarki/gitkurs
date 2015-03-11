@@ -42,10 +42,21 @@ var osmlayer =
         attribution: '<a href="http://kartverket.no/">Kartverket</a>',
         transparent: false
     }).addTo(map);
+    
+    var sjolayer = new
+	 L.TileLayer.WMS("http://opencache.statkart.no/gatekeeper/gk/gk.open", {
+        layers: 'sjo_hovedkart2',
+        format: 'image/png',
+        attribution: '<a href="http://kartverket.no/">Kartverket</a>',
+        transparent: false
+    }).addTo(map);
+    
+    
 		
 		var baseMaps = {
     "openstreetmaps": osmlayer,
-    "Topografisk norgeskart" : notopolayer
+    "Topografisk norgeskart" : notopolayer,
+    "Norsk Sjøkart" :sjolayer
 };
 
 var overlayMaps = {
