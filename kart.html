@@ -51,7 +51,15 @@ var osmlayer =
         attribution: '<a href="http://kartverket.no/">Kartverket</a>',
         transparent: false
     }).addTo(map);
-    
+   
+   var joggetur = L.geoJson(data, {
+    style: function (feature) {
+        return {color: feature.properties.color};
+    },
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup(feature.properties.description);
+    }
+}).addTo(map);
     
 		
 		var baseMaps = {
@@ -61,7 +69,6 @@ var osmlayer =
 };
 
 var overlayMaps = {
-   
 };
 
 L.control.layers(baseMaps, overlayMaps).addTo(map);
