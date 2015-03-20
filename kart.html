@@ -52,15 +52,9 @@ var osmlayer =
         transparent: false
     }).addTo(map);
    
-   var joggetur = L.geoJson(data, {
-    style: function (feature) {
-        return {color: feature.properties.color};
-    },
-    onEachFeature: function (feature, layer) {
-        layer.bindPopup(feature.properties.description);
-    }
-}).addTo(map);
-    
+   var joggetur = 
+   L.tileLayer('http://oygarki.maplytic.no/title/joggetur/{z}/{x}/{y}.png').addTo(map);
+
 		
 		var baseMaps = {
     "Open Streetmap": osmlayer,
@@ -69,6 +63,7 @@ var osmlayer =
 };
 
 var overlayMaps = {
+"joggetur": joggetur
 };
 
 L.control.layers(baseMaps, overlayMaps).addTo(map);
