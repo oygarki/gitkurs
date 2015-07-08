@@ -42,7 +42,7 @@ var osmlayer =
         format: 'image/png',
         attribution: '<a href="http://kartverket.no/">Kartverket</a>',
         transparent: false
-    }).addTo(map);
+    })
     
     var sjolayer = new
 	 L.TileLayer.WMS("http://opencache.statkart.no/gatekeeper/gk/gk.open", {
@@ -50,7 +50,7 @@ var osmlayer =
         format: 'image/png',
         attribution: '<a href="http://kartverket.no/">Kartverket</a>',
         transparent: false
-    }).addTo(map);
+    })
    
    var joggetur = 
    L.tileLayer('http://oygarki.maplytic.no/tile/joggetur/{z}/{x}/{y}.png').addTo(map);
